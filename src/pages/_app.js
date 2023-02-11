@@ -1,9 +1,8 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-props-no-spreading */
+import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
-import NavBar from 'components/NavBar';
-import Footer from 'components/Footer';
 
+import { NavBar, Footer } from '../components/index';
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }) => (
@@ -13,6 +12,7 @@ const MyApp = ({ Component, pageProps }) => (
       <Component {...pageProps} />
       <Footer />
     </div>
+    <Script src="https://kit.fontawesome.com/cc6a69dc75.js" crossOrigin="anonymous" />
   </ThemeProvider>
 );
 
