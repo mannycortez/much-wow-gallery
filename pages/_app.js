@@ -2,13 +2,14 @@
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 
-import { NavBar, Footer } from '../components/index';
+import { NavBar, Footer, Section } from '../components/index';
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }) => (
   <ThemeProvider attribute="class">
     <div>
       <NavBar />
+      <Section />
       <Component {...pageProps} />
       <Footer />
     </div>

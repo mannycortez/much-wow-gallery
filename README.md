@@ -37,5 +37,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Much Wow Gallery
-
+Much Wow Gallery is a modern Web3 site built with React, Solidity and Next.js. Concept, design and artwork by Manny Cortez Studios LLC.
