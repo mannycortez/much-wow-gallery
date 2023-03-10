@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import images from '../assets';
+import { Button } from '.';
 
 const MenuItems = ({ isMobile, active, setActive }) => {
   const generateLink = (i) => {
@@ -37,16 +38,37 @@ const MenuItems = ({ isMobile, active, setActive }) => {
   );
 };
 
+const ButtonGroup = ({ setActive, router }) => {
+  const hasConnected = true;
+
+  return hasConnected ? (
+    <Button
+      btnName="Create"
+      classStyles="mx-2 rounded-xl"
+      handleClick={() => {
+        setActive('');
+        router.push('/create-nft');
+      }}
+    />
+  ) : (
+    <Button
+      btnName="Connect"
+      classStyles="mx-2 rounded-xl"
+    />
+  );
+};
+
 const NavBar = () => {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
   const [active, setActive] = useState('Explore NFTs');
 
   return (
     <nav className="flexBetween w-full fixed z-10 p-4 flex-row border-b dark:bg-nft-dark bg-white dark:border-nft-black-1 border-nft-gray-1">
-      <div className="flex flex-1 flex-row justify-start">
+      <div className="flex flex-1 flex-row justify-start rounded-2xl p-1">
         <Link href="/">
           <div className="flexCenter md:hidden cursor-pointer" onClick={() => {}}>
-            <Image src={images.doge} objectFit="contain" width={100} height={100} alt="logo" />
+            <Image src={images.doge} objectFit="contain" width={100} height={100} alt="logo" className="rounded-2xl" />
             <p className="dark:text-white text-nft-black-1 font-semibold text-lg ml-1">Much Wow Gallery</p>
           </div>
         </Link>
@@ -74,9 +96,10 @@ const NavBar = () => {
       </div>
 
       <div className="md:hidden flex">
-        <ul className="list-none flexcenter flex-row">
-          <MenuItems active={active} setActive={setActive} />
-        </ul>
+        <MenuItems active={active} setActive={setActive} />
+        <div className="ml-4">
+          <ButtonGroup setActiveo={setActive} router={router} />
+        </div>
       </div>
     </nav>
   );
