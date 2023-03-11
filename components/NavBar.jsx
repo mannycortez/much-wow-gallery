@@ -128,7 +128,7 @@ const NavBar = () => {
         )}
 
         {isOpen && (
-          <div className="fixed inset-0 top-60 dark:bg-nft-dark bg-white z-10 nav-h flex justify-between flex-col">
+          <div className="fixed inset-0 top-64 dark:bg-nft-dark bg-white z-10 nav-h flex justify-between flex-col">
             <div className="flex-1 p-4">
               <MenuItems active={active} setActive={setActive} isMobile />
             </div>
